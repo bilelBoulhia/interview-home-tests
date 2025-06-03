@@ -1,0 +1,226 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+
+  --color-primary-light: #1e3a8a;
+  --color-primary-dark: #3b82f6;
+
+
+  --color-secondary-light: #0891b2;
+  --color-secondary-dark: #06b6d4;
+
+
+
+
+  --color-accent-light: #f7f3e9;
+  --color-accent-dark: #2a2a2a;
+
+
+  --color-background-light: 0 0% 100%;
+  --color-background-dark:  #0F1218;
+
+  --color-card-light: #fafafa;
+  --color-card-dark: #11141b;
+
+
+  --color-border-light: #0859c6;
+  --color-border-dark: #080b0c;
+
+  --color-error-light: #dc2626;
+  --color-error-dark: #da3636;
+  --color-success-light: #16a34a;
+  --color-success-dark: #4ade80;
+  --color-warning-light: #ea580c;
+  --color-warning-dark: #fb923c;
+
+
+  --color-foreground-light: #0a0a0a;
+  --color-foreground-dark: #fafafa;
+  --color-muted-light: #64748b;
+  --color-muted-dark: #94a3b8;
+
+
+  --color-primary: var(--color-primary-light);
+  --color-secondary: var(--color-secondary-light);
+  --color-accent: var(--color-accent-light);
+  --color-background: var(--color-background-light);
+  --color-card: var(--color-card-light);
+  --color-border: var(--color-border-light);
+  --color-error: var(--color-error-light);
+  --color-success: var(--color-success-light);
+  --color-warning: var(--color-warning-light);
+  --color-foreground: var(--color-foreground-light);
+  --color-muted: var(--color-muted-light);
+
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: var(--color-primary-dark);
+    --color-secondary: var(--color-secondary-dark);
+    --color-accent: var(--color-accent-dark);
+    --color-background: var(--color-background-dark);
+    --color-card: var(--color-card-dark);
+    --color-border: var(--color-border-dark);
+    --color-error: var(--color-error-dark);
+    --color-success: var(--color-success-dark);
+    --color-warning: var(--color-warning-dark);
+    --color-foreground: var(--color-foreground-dark);
+    --color-muted: var(--color-muted-dark);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--color-card);
+  border-radius: 20px;
+
+  box-shadow:  0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 3rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+
+
+.form-group {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--color-foreground);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  position: relative;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.1), 0 4px 12px rgba(30, 58, 138, 0.15);
+  transform: translateY(-2px);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+
+h1,
+.h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2,
+.h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: var(--color-foreground);
+}
+
+h3,
+.h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+  color: var(--color-foreground);
+}
+
+p {
+  margin-bottom: 1.25rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+
+
+
+
+.text-center {
+  text-align: center;
+}
+.text-muted {
+  color: var(--color-muted);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  .card {
+    padding: 2rem;
+  }
+  h1,
+  .h1 {
+    font-size: 2.5rem;
+  }
+
+}
+

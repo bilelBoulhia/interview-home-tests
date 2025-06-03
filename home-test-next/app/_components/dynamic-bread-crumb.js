@@ -14,29 +14,31 @@ import {ChevronRight} from "lucide-react";
 
 export const DynamicBreadCrumb =()=>{
     const pathname = usePathname();
-    const [sections,setSections] = useState<string[]>([]);
+    const [sections,setSections] = useState([]);
     useEffect(()=>{
         const sections = pathname.split('/').filter(Boolean);
-        setSections(["acceuil",...sections])
+        setSections([...sections])
     },[pathname])
 
     return (
-        <div className="bg-gradient-to-r from-slate-100 to-slate-200 border-b border-slate-200">
+        <div className="bg-[var(--color-background)] border-b-1 border-[var(--color-primary)]/30 py-1 px-4">
             <Breadcrumb className="mx-auto py-4  sm:px-6">
                 <BreadcrumbList className="flex items-center space-x-1 text-sm">
                     {sections.map((section, i) => (
                         <React.Fragment key={i}>
-                            <BreadcrumbItem className="overflow-hidden text-ellipsis whitespace-nowrap">
+                            {i === 0 && (
+                            <BreadcrumbSeparator>
+                                <ChevronRight className="h-4 w-4 text-slate-400"/>
+                            </BreadcrumbSeparator>
+                            )}
+                            <BreadcrumbItem key={`i-${i}`} className="overflow-hidden text-ellipsis whitespace-nowrap">
                                 <BreadcrumbLink
                                     href={i === 0 ? "/" : `/${sections.slice(1, i + 1).join("/")}`}
-                                    className={`
-                    hover:text-[var(--bea-dark-blue)] transition-colors duration-200
-                    ${
+                                    className={`hover:text-[var(--color-secondary)]  transition-colors duration-200${
                                         i === sections.length - 1
-                                            ? "font-semibold text-[var(--bea-dark-blue)]"
-                                            : "text-slate-600 font-medium"
-                                    }
-                  `}
+                                            ? "font-semibold text-[var(--color-primary)]"
+                                            : "text-[var(--color-secondary)] font-medium"
+                                    }`}
                                 >
                                     {section.charAt(0).toUpperCase() + section.slice(1)}
                                 </BreadcrumbLink>
