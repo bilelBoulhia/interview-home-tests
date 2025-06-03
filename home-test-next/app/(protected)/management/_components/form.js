@@ -43,7 +43,7 @@ export default function Form({ open, onClose, product, mode, onSuccess }) {
                 onClose()
             }
         } catch (error) {
-            onSuccess({ success: false, error: "An unexpected error occurred." })
+            onSuccess({ success: false, error: "Une erreur inattendue est survenue." })
         } finally {
             setIsLoading(false)
         }
@@ -68,20 +68,20 @@ export default function Form({ open, onClose, product, mode, onSuccess }) {
                     <X size={24} />
                 </button>
 
-                <h2 className="h2 mb-6">{mode === "create" ? "Create New Product" : "Edit Product"}</h2>
+                <h2 className="h2 mb-6">{mode === "create" ? "Créer un nouveau produit" : "Modifier le produit"}</h2>
 
                 <form onSubmit={handleSubmit}>
                     {["title", "price", "category", "image", "description"].map((field) => (
                         <div className="form-group" key={field}>
                             <label htmlFor={field} className="form-label capitalize">
-                                {field === "image" ? "Image URL" : field}
+                                {field === "image" ? "URL de l'image" : field === "title" ? "Titre" : field === "price" ? "Prix" : field === "category" ? "Catégorie" : "Description"}
                             </label>
                             {field === "description" ? (
                                 <textarea
                                     id={field}
                                     value={formData[field]}
                                     onChange={(e) => handleChange(field, e.target.value)}
-                                    placeholder="Product description"
+                                    placeholder="Description du produit"
                                     rows={3}
                                     required
                                 />
@@ -98,7 +98,7 @@ export default function Form({ open, onClose, product, mode, onSuccess }) {
                                             : e.target.value
                                         )
                                     }
-                                    placeholder={`Enter ${field}`}
+                                    placeholder={`Saisir ${field === "image" ? "l'URL de l'image" : field === "title" ? "le titre" : field === "price" ? "le prix" : field === "category" ? "la catégorie" : "la description"}`}
                                     required={field !== "image"}
                                 />
                             )}
@@ -112,7 +112,7 @@ export default function Form({ open, onClose, product, mode, onSuccess }) {
                             className="px-6 py-3 rounded-xl border-2 border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-all"
                             disabled={isLoading}
                         >
-                            Cancel
+                            Annuler
                         </button>
                         <button
                             type="submit"
@@ -126,9 +126,9 @@ export default function Form({ open, onClose, product, mode, onSuccess }) {
                                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                     </svg>
-                                    {mode === "create" ? "Creating..." : "Updating..."}
+                                    {mode === "create" ? "Création..." : "Mise à jour..."}
                                 </span>
-                            ) : mode === "create" ? "Create Product" : "Update Product"}
+                            ) : mode === "create" ? "Créer le produit" : "Mettre à jour le produit"}
                         </button>
                     </div>
                 </form>

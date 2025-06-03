@@ -2,7 +2,17 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import {ChartNoAxesGantt, DeleteIcon, EditIcon, Menu, NewspaperIcon, PlusCircleIcon, PlusIcon, X} from "lucide-react"
+import {
+    ChartNoAxesGantt,
+    DeleteIcon,
+    EditIcon,
+    Menu,
+    NewspaperIcon,
+    PlusCircleIcon,
+    PlusIcon,
+    User2Icon,
+    X
+} from "lucide-react"
 import {Avatar, AvatarFallback} from "@/app/_components/ui/avatar";
 import {
     DropdownMenu,
@@ -42,7 +52,7 @@ export default function Navbar() {
                             <DropdownMenu>
                                 <DropdownMenuTrigger>
                                     <Avatar>
-                                        <AvatarFallback>s</AvatarFallback>
+                                        <AvatarFallback><User2Icon/></AvatarFallback>
                                     </Avatar>
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent>

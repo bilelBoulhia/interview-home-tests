@@ -41,7 +41,7 @@ export default function ProductPage() {
                             {product.category}
                         </span>
                         <span className="text-[var(--color-muted)] text-sm">
-                            {product.rating.count} reviews
+                            {product.rating.count} avis
                         </span>
                     </div>
 
@@ -64,26 +64,26 @@ export default function ProductPage() {
             </div>
 
             <div className="mt-16 w-full">
-                <h2 className="h2 mb-6">Customer Reviews</h2>
+                <h2 className="h2 mb-6">Avis des clients</h2>
                 <div className="flex flex-wrap gap-2">
                     {[
                         {
                             name: "Alice Johnson",
                             rating: 5,
                             comment:
-                                "Absolutely love this product! Great quality and fast shipping. Highly recommend!",
+                                "J'adore absolument ce produit ! Excellente qualité et expédition rapide. Je recommande vivement !",
                         },
                         {
                             name: "Mark Thompson",
                             rating: 4,
                             comment:
-                                "Very satisfied with the purchase. Product matches the description perfectly.",
+                                "Très satisfait de l'achat. Le produit correspond parfaitement à la description.",
                         },
                         {
                             name: "Sara Lee",
                             rating: 5,
                             comment:
-                                "Exceeded my expectations. Will definitely buy again!",
+                                "A dépassé mes attentes. Je vais certainement racheter !",
                         },
                     ].map((review, index) => (
                         <div key={index} className="card p-6 shadow-md">
