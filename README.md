@@ -1,7 +1,8 @@
 # Next.js
 
-Cette application utilise l'API FakeStoreAPI pour récupérer les données.  
-Toutes les modifications locales ne seront pas prises en compte par l'API réelle.
+remarque :
+Cette application utilise l'API FakeStoreAPI pour récupérer les données.
+Les appels à l'API ne produisent aucun changement réel et sont uniquement destinés à des fins de test.
 
 Créez un fichier `.env` à la racine du projet avec :  
 `NEXT_PUBLIC_URL=https://fakestoreapi.com`
