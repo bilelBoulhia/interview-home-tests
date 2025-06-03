@@ -12,9 +12,6 @@ Ensuite, installez les dépendances avec :
 Pour lancer le serveur de développement :  
 `npm run dev`
 
-Pour compiler l'application pour la production :  
-`npm run build`
-
 Pour lancer les tests :  
 `npm test`
 
