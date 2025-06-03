@@ -28,7 +28,7 @@ export const useAuth=()=> {
             addCredentials(JSON.parse(data));
 
             router.push('/products');
-            toast.success('signed in');
+            toast.success(data);
 
         } catch (err) {
             toast.error('un erreur a ete etabalir');

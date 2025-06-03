@@ -12,7 +12,7 @@ import {ChevronRight} from "lucide-react";
 
 
 
-export const DynamicBreadCrumb =()=>{
+export default function DynamicBreadCrumb() {
     const pathname = usePathname();
     const [sections,setSections] = useState([]);
     useEffect(()=>{

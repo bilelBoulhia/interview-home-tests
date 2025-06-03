@@ -5,33 +5,33 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+    variable: "--font-geist-sans",
+    subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+    variable: "--font-geist-mono",
+    subsets: ["latin"],
 });
 
 
 export default function RootLayout({ children }) {
 
 
-  return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    return (
+        <html lang="en">
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
 
-          <ThemeProvider
+        <ThemeProvider
             attribute="class"
             defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
-          >
+        >
             {children}
             <Toaster />
-          </ThemeProvider>
-      </body>
-    </html>
-  );
+        </ThemeProvider>
+        </body>
+        </html>
+    );
 }

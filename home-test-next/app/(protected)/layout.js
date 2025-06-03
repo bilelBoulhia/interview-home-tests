@@ -1,8 +1,11 @@
 'use client'
-import {DynamicBreadCrumb} from "@/app/_components/dynamic-bread-crumb";
+
+import { AuthContext } from "../_contexts/AuthContext";
+import Navbar from "@/app/_components/nav-bar";
 import LogoutButton from "@/app/_components/logout-button";
-import { useState } from "react";
-import { AuthContext } from "@/app/_contexts/AuthContext";
+import DynamicBreadCrumb from "@/app/_components/dynamic-bread-crumb";
+import {useState} from "react";
+
 
 
 export default function RootLayout({ children }) {
@@ -12,10 +15,11 @@ export default function RootLayout({ children }) {
             authState.credentials = creds;
         }
     }))
-
-
     return (
         <AuthContext.Provider value={authState}>
+            <header>
+                <Navbar/>
+            </header>
             <main>
                 <LogoutButton/>
                 <DynamicBreadCrumb/>

@@ -16,7 +16,7 @@ export function CopyField({ label, value }) {
     return (
         <div className="flex items-center justify-between gap-2">
             <span>
-                <strong className="text-white">{label}:</strong> {value}
+                <strong className="text-[var(--color-primary)]">{label}:</strong> {value}
             </span>
             <Button
                 type="button"
@@ -25,7 +25,7 @@ export function CopyField({ label, value }) {
                 onClick={handleCopy}
             >
                 <Copy className="w-4 h-4 mr-1" />
-                {copied ? "Copied!" : "Copy"}
+                {copied ? "Copied" : "Copy"}
             </Button>
         </div>
     )
