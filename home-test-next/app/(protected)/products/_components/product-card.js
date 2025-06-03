@@ -1,4 +1,3 @@
-import { Star } from "lucide-react"
 import StarRating from "@/app/_components/star-rating";
 import {useRouter} from "next/navigation";
 
